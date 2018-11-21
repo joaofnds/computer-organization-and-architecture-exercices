@@ -6,16 +6,16 @@ main:
 	lui $s0, 0x1001 # memory pointer
 	lw  $s1, vector_size
 
-	# memory_pointer = read_vector(memory_pointer, vector_size) + 4
+	# memory_pointer = read_vector(memory_pointer, vector_size)
 	or $a0, $zero, $s0
 	or $a1, $zero, $s1
 	jal read_vector
 	nop
 	or $s0, $zero, $v0 # add offset to memory pointer
-	
-	# memory_pointer = read_vector(memory_pointer, vector_size) + 4
+
+	# memory_pointer = read_vector(memory_pointer, vector_size)
 	or $a0, $zero, $s0
-	or $a1, $zero, $s1	
+	or $a1, $zero, $s1
 	jal read_vector
 	nop
 	or $s0, $zero, $v0 # add offset to memory pointer
